@@ -46,7 +46,7 @@
                             onclick="showAlert()"
                              class="btn btn-primary"
                              style="background-color:green">Sign in</button> --}}
-                            <button type="button" onclick="showAlert()" id="crear"
+                            <button type="button"  id="crear"
                             class="btn btn-primary"
                             style="">Sign in</button>
                         </div>
@@ -55,29 +55,37 @@
             </div>
         </div>
     </div>
-<script>
-    function showAlert()
-    {
-        var nombre = document.getElementById('nombre').value;
-        var primer_apellido = document.getElementById('primer_apellido');
-        var segundo_apellido = document.getElementById('segundo_apellido');
-        var rfc = document.getElementById('rfc');
-        var departamento = document.getElementById('departamento');
-        var boton = document.getElementById("crear").click();
+<script  type="text/javascript">
 
-        var mensaje =
-        "Nombre"+nombre
-        +"Primer apellido"+primer_apellido
-        +"segundo apellido"+segundo_apellido
-        +"rfc"+rfc
-        +"departamento"+departamento;
+
+var boton = document.getElementById("crear");
+
+if (boton) {
+    boton.addEventListener('click',showAlert,true);
+         function showAlert()
+    {
+        let nombre = document.getElementById('nombre').value;
+        let primer_apellido = document.getElementById('primer_apellido').value;
+        let segundo_apellido = document.getElementById('segundo_apellido').value;
+        let rfc = document.getElementById('rfc').value;
+        let departamento = document.getElementById('departamento_id').value;
+
+
+        let mensaje ="Nombre"+nombre+"\n"
+        +"Primer apellido"+primer_apellido+"\n"
+        +"segundo apellido"+segundo_apellido+"\n"
+        +"rfc"+rfc+"\n"
+        +"departamento"+departamento+"\n"
+
 
         if (confirm(mensaje)) {
                 document.getElementById('postForm').submit();
 
             }
-         boton.addEventListener('click',showAlert);
-
     }
+}
+
+
+
 </script>
 </x-app-layout>

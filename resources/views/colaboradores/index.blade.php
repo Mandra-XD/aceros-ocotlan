@@ -11,15 +11,17 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <button type="button" class="btn " style=" background-color:green"><a
-                        href="{{ route('colaborador.create') }}">Success</a></button>
+                        href="{{ route('colaborador.create') }}">Crear</a></button>
 
                         <table class="table">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">nombre</th>
+                            <th scope="col">primer apellido</th>
+                            <th scope="col">segundo apellido</th>
+                            <th scope="col">rfc</th>
+                            <th scope="col">departamento</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -29,6 +31,8 @@
                                 <td scope="row">{{ $colaboradore->id }}</td>
                                 </th>
                                 <td>{{ $colaboradore->nombre }}</td>
+                                <td>{{ $colaboradore->primer_apellido }}</td>
+                                <td>{{ $colaboradore->segundo_apellido  }}</td>
                                 <td>{{ $colaboradore->rfc }}</td>
                                 <td>{{ $colaboradore->departamento->nombre }}</td>
                                 <form  method="POST" action="{{route('colaborador.delete', $colaboradore->id)}}">
